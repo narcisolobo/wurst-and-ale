@@ -1,0 +1,78 @@
+---
+import { Menu } from "@lucide/astro";
+---
+
+<header
+  id="site-header"
+  class="fixed top-0 right-0 left-0 z-40 w-full bg-transparent transition-all duration-300 ease-in-out"
+>
+  <div class="container mx-auto">
+    <nav class="px-4 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex-1">
+          <h1
+            id="brand"
+            class="font-display text-base-100 text-2xl font-bold md:text-4xl"
+          >
+            <a href="/">WURST & ALE</a>
+          </h1>
+          <p class="text-base-100/80 hidden text-sm uppercase md:inline">
+            1234 Example Ave. Chicago, IL 60631 | TEL: (555) 123-4567
+          </p>
+        </div>
+        <div id="navigation" class="hidden flex-none lg:block">
+          <ul class="text-base-100 flex gap-4 text-2xl font-semibold uppercase">
+            <li><a href="/menu">Menu</a></li>
+            <li><a href="/events">Events</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div id="burger-menu" class="block lg:hidden">
+          <label
+            for="mobile-navigation"
+            aria-label="open sidebar"
+            class="btn btn-square btn-ghost drawer-button text-base-100"
+          >
+            <Menu size={32} />
+          </label>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .scrolled {
+    background-color: oklch(98% 0.016 73.684);
+    box-shadow:
+      0 1px 3px 0 rgb(0 0 0 / 0.1),
+      0 1px 2px -1px rgb(0 0 0 / 0.1);
+  }
+
+  .scrolled #brand,
+  .scrolled label {
+    color: oklch(46.44% 0.111 37.85);
+  }
+
+  .scrolled p {
+    color: oklch(46.44% 0.111 37.85 / 0.8);
+  }
+</style>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const header = document.querySelector("#site-header")! as HTMLDivElement;
+    const threshold = header.offsetHeight;
+
+    function handleScroll() {
+      if (window.scrollY > threshold) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+  });
+</script>

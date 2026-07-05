@@ -1,0 +1,16 @@
+<div class="drawer-side z-50">
+  <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"
+  ></label>
+  <ul class="menu bg-base-200 min-h-full w-80 p-4 text-xl uppercase">
+    <!-- Sidebar content here -->
+    <li><a onclick="closeDrawer()">Menu</a></li>
+    <li><a onclick="closeDrawer()">Events</a></li>
+    <li><a onclick="closeDrawer()">Contact</a></li>
+  </ul>
+</div>
+
+<script is:inline>
+  window.closeDrawer = () => {
+    document.getElementById("mobile-navigation").checked = false;
+  };
+</script>

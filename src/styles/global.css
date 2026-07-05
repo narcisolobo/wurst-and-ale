@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: caramellatte --default;
+}
+
+@import "@fontsource-variable/outfit/wght.css";
+
+@theme {
+  --font-display:
+    "Outfit Variable", "Century Gothic", "Poppins", ui-sans-serif, system-ui,
+    -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-sans:
+    "Outfit Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Arial, sans-serif;
+}

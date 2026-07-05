@@ -1,5 +1,14 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "include": [".astro/types.d.ts", "**/*", ".prettierrc.mjs"],
+  "exclude": ["dist"],
+  "compilerOptions": {
+    "paths": {
+      "@/images/*": ["./src/images/*"],
+      "@/layouts/*": ["./src/layouts/*"],
+      "@/pages/*": ["./src/pages/*"],
+      "@/sections/*": ["./src/sections/*"],
+      "@/styles/*": ["./src/styles/*"]
+    }
+  }
 }
