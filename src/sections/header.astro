@@ -17,7 +17,9 @@ import { Menu } from "@lucide/astro";
             <a href="/">WURST & ALE</a>
           </h1>
           <p class="text-base-100/80 hidden text-sm uppercase md:inline">
-            1234 Example Ave. Chicago, IL 60631 | TEL: (555) 123-4567
+            1234 Example Ave. Chicago, IL 60631 | TEL: <a
+              href="tel:+15551234567">(555) 123-4567</a
+            >
           </p>
         </div>
         <div id="navigation" class="hidden flex-none lg:block">
@@ -50,6 +52,7 @@ import { Menu } from "@lucide/astro";
   }
 
   .scrolled #brand,
+  .scrolled li,
   .scrolled label {
     color: oklch(46.44% 0.111 37.85);
   }
@@ -60,19 +63,18 @@ import { Menu } from "@lucide/astro";
 </style>
 
 <script>
-  document.addEventListener("astro:page-load", () => {
-    const header = document.querySelector("#site-header")! as HTMLDivElement;
-    const threshold = header.offsetHeight;
+  const header = document.querySelector("#site-header")! as HTMLDivElement;
+  const threshold = header.offsetHeight;
 
-    function handleScroll() {
-      if (window.scrollY > threshold) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
-      }
+  function handleScroll() {
+    if (window.scrollY > threshold) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
     }
+  }
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-  });
+  window.removeEventListener("scroll", handleScroll);
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  handleScroll();
 </script>

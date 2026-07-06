@@ -1,6 +1,18 @@
+---
+import { getImage } from "astro:assets";
+import sausagesSrc from "@/images/sausages.webp";
+
+const sausages = await getImage({
+  src: sausagesSrc,
+  format: "avif",
+  quality: 70,
+});
+---
+
 <section
   id="home"
-  class="relative flex min-h-[80vh] items-center justify-center bg-[url(../images/sausages.webp)] bg-cover bg-center bg-no-repeat"
+  class="relative flex min-h-[80vh] items-center justify-center bg-cover bg-center bg-no-repeat"
+  style={`background-image: url(${sausages.src});`}
 >
   <div
     class="pointer-events-none absolute inset-0 bg-linear-to-b from-black/75 via-black/10 to-transparent"

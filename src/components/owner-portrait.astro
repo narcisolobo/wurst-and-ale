@@ -1,0 +1,14 @@
+---
+import Bob from "@/images/gen-ai-owner.jpg";
+import { Picture } from "astro:assets";
+---
+
+<Picture
+  src={Bob}
+  alt="Bart Swerski - Fictional Owner"
+  formats={["avif", "webp"]}
+  fallbackFormat="jpeg"
+  widths={[420, 640, 848]}
+  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 360px, (max-width: 1279px) 488px, (max-width: 1535px) 616px, 744px"
+  loading="eager"
+/>
