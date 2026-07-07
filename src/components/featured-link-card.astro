@@ -1,0 +1,20 @@
+---
+import { Picture } from "astro:assets";
+const { image, link } = Astro.props;
+---
+
+<div class="card bg-base-100 shadow-sm">
+  <Picture
+    src={image}
+    alt={link.title}
+    formats={["avif", "webp"]}
+    fallbackFormat="jpg"
+    sizes="(max-width: 767px) 100vw, (max-width: 1023px) 229px, (max-width: 1279px) 315px, (max-width: 1535px) 400px, 485px"
+    widths={[229, 315, 400, 485, 970]}
+    class="rounded-t-xl"
+  />
+  <div class="card-body">
+    <h3 class="card-title">{link.title}</h3>
+    <p>{link.description}</p>
+  </div>
+</div>

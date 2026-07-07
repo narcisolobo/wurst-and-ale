@@ -1,0 +1,33 @@
+---
+import featuredLinks from "@/data/featured-links.json";
+import FeaturedLinkCard from "@/components/featured-link-card.astro";
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/sausage-images/*.jpg",
+);
+---
+
+<section
+  id="featured-links"
+  class="bg-base-200 min-h-[80vh] bg-cover bg-center bg-no-repeat"
+>
+  <div class="container mx-auto px-4 py-12">
+    <h2
+      class="text-base-content mb-2 text-xl font-semibold uppercase md:text-3xl"
+    >
+      Featured Links
+    </h2>
+    <div class="grid gap-6 md:grid-cols-3">
+      {
+        featuredLinks.map(async (link) => {
+          const imagePath = `/src/images/sausage-images/${link.image}`;
+          const imageModule = images[imagePath];
+          if (!imageModule) throw new Error(`Image not found: ${imagePath}`);
+          const image = (await imageModule()).default;
+
+          return <FeaturedLinkCard image={image} link={link} />;
+        })
+      }
+    </div>
+  </div>
+</section>
