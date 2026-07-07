@@ -1,0 +1,30 @@
+---
+import featuredItems from "@/data/featured-items.json";
+import FeaturedItemCard from "@/components/featured-item-card.astro";
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/item-images/*.jpg",
+);
+---
+
+<section id="featured-items" class="bg-base-200">
+  <div class="container mx-auto max-w-6xl px-4 py-12">
+    <h2
+      class="text-base-content mb-2 text-xl font-semibold uppercase md:text-3xl"
+    >
+      Featured Items
+    </h2>
+    <div class="grid gap-6 md:grid-cols-3">
+      {
+        featuredItems.map(async (item) => {
+          const imagePath = `/src/images/item-images/${item.image}`;
+          const imageModule = images[imagePath];
+          if (!imageModule) throw new Error(`Image not found: ${imagePath}`);
+          const image = (await imageModule()).default;
+
+          return <FeaturedItemCard image={image} item={item} />;
+        })
+      }
+    </div>
+  </div>
+</section>

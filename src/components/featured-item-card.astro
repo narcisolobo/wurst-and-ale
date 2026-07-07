@@ -1,0 +1,22 @@
+---
+import { Picture } from "astro:assets";
+const { image, item } = Astro.props;
+---
+
+<figure class="group relative">
+  <Picture
+    src={image}
+    alt={item.title}
+    formats={["avif", "webp"]}
+    fallbackFormat="jpg"
+    sizes="(max-width: 767px) 100vw, (max-width: 1023px) 229px, (max-width: 1279px) 315px, (max-width: 1535px) 400px, 485px"
+    widths={[229, 315, 400, 485, 970]}
+    class="h-full w-full object-cover transition-all duration-300 group-hover:brightness-50"
+  />
+  <div
+    class="text-base-100 absolute inset-0 flex flex-col justify-end p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+  >
+    <p class="mt-1 text-sm">{item.description}</p>
+  </div>
+  <figcaption>{item.title}</figcaption>
+</figure>

@@ -1,0 +1,28 @@
+---
+import { Picture } from "astro:assets";
+const { image, event, i } = Astro.props;
+const isReversed = i % 2 === 0;
+---
+
+<div
+  class="mb-12 flex flex-col items-stretch justify-start gap-6 last:mb-0 md:flex-row"
+>
+  <div class={`card bg-base-200 flex-1 ${isReversed ? "md:order-2" : ""}`}>
+    <div class="card-body">
+      <span class="text-4xl">{event.icon}</span>
+      <h3 class="card-title mt-2 text-2xl">{event.title}</h3>
+      <p class="mt-2 max-w-[60ch]">{event.description}</p>
+    </div>
+  </div>
+  <div class={isReversed ? "md:order-1" : ""}>
+    <Picture
+      src={image}
+      alt={event.title}
+      formats={["avif", "webp"]}
+      fallbackFormat="jpg"
+      sizes="(max-width: 430px) 100vw, 430px"
+      widths={[215, 330, 430]}
+      class="w-full max-w-107.5 rounded-xl object-cover"
+    />
+  </div>
+</div>

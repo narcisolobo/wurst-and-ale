@@ -1,0 +1,30 @@
+[
+  {
+    "id": "pub-trivia",
+    "title": "Pub Trivia",
+    "description": "Every Wednesday, grab your smartest friends and put your knowledge to the test. Bragging rights, prizes, and a round on the house for the winning table.",
+    "icon": "🧠",
+    "image": "pub-trivia.jpg"
+  },
+  {
+    "id": "fantasy-draft-hq",
+    "title": "Fantasy Draft Headquarters",
+    "description": "Free WiFi, a full bar, and zero judgment if you draft a kicker in the third round. Bring your laptop, your league, and your worst trash talk.",
+    "icon": "🏈",
+    "image": "fantasy-football.jpg"
+  },
+  {
+    "id": "beer-tasting",
+    "title": "Beer Tasting Nights",
+    "description": "A rotating lineup of seasonal and hard-to-find brews, guided by our own staff. Come with an open mind and leave with a new favorite.",
+    "icon": "🍺",
+    "image": "beer-tasting.jpg"
+  },
+  {
+    "id": "sausage-tasting",
+    "title": "Sausage Tasting",
+    "description": "Small plates, big flavors. Sample our traditional, exotic, and seasonal links side by side — including a few specials you won't find on the regular menu.",
+    "icon": "🌭",
+    "image": "sausage-tasting.jpg"
+  }
+]
