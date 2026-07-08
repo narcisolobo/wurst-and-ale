@@ -1,0 +1,37 @@
+---
+import { Picture } from "astro:assets";
+const { image, item } = Astro.props;
+const ratio = image.width / image.height;
+---
+
+<Picture
+  src={image}
+  alt={item.alt}
+  formats={["avif", "webp"]}
+  fallbackFormat="jpg"
+  widths={[200, 300, 400]}
+  sizes="(max-width: 767px) 50vw, (max-width: 1023px) 33vw, 25vw"
+  class="aspect-square w-full cursor-pointer rounded object-cover"
+  onclick={`document.getElementById('${item.slug}').showModal()`}
+/>
+
+<dialog id={item.slug} class="modal open:bg-black/80">
+  <div
+    class="modal-box max-w-none overflow-hidden rounded-none p-0"
+    style={`width: min(90vw, 90vh * ${ratio}); height: min(90vh, 90vw / ${ratio});`}
+  >
+    <Picture
+      src={image}
+      alt={item.alt}
+      formats={["avif", "webp"]}
+      fallbackFormat="jpg"
+      widths={[400, 700, 1000, 1600]}
+      sizes="90vw"
+      loading="lazy"
+      class="block h-full w-full scale-[1.01] object-contain"
+    />
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>

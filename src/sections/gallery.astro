@@ -1,6 +1,23 @@
 ---
+import GalleryItem from "@/components/gallery-item.astro";
+import galleryImages from "@/data/gallery-items.json";
+
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/images/gallery-images/*.jpg",
+);
+
+const items = await Promise.all(
+  galleryImages.map(async (item) => {
+    const imagePath = `/src/images/gallery-images/${item.image}`;
+    const imageLoader = images[imagePath];
+    if (!imageLoader) throw new Error(`Image not found: ${imagePath}`);
+    const image = (await imageLoader()).default;
+    return {
+      ...item,
+      slug: item.image.slice(0, item.image.length - 4),
+      image,
+    };
+  }),
 );
 ---
 
@@ -11,5 +28,8 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
     >
       Gallery
     </h2>
+    <div class="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
+      {items.map((item) => <GalleryItem image={item.image} item={item} />)}
+    </div>
   </div>
 </section>
