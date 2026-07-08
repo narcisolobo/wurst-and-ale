@@ -1,5 +1,7 @@
 ---
-
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/gallery-images/*.jpg",
+);
 ---
 
 <section id="gallery" class="bg-base-200 min-h-[80vh]">
