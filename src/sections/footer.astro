@@ -1,31 +1,41 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
 <footer
   class="footer sm:footer-horizontal bg-base text-base-content container mx-auto px-4 py-10 xl:max-w-6xl"
 >
   <aside>
+    <p class="text-lg font-semibold">Wurst & Ale</p>
     <p>
-      ACME Industries Ltd.
+      Sports. Beer. Encased meats.
       <br />
-      Providing reliable tech since 1992
+      Your new favorite joint in Lakeview.
+    </p>
+    <p class="mt-4 text-sm opacity-70">
+      © {currentYear} Wurst & Ale. All rights reserved.
     </p>
   </aside>
   <nav>
-    <h6 class="footer-title">Services</h6>
-    <a class="link link-hover">Branding</a>
-    <a class="link link-hover">Design</a>
-    <a class="link link-hover">Marketing</a>
-    <a class="link link-hover">Advertisement</a>
+    <h6 class="footer-title">Quick Links</h6>
+    <a class="link link-hover" href="/#home">Home</a>
+    <a class="link link-hover" href="/#featured-links">Menu</a>
+    <a class="link link-hover" href="/#featured-events">Events</a>
+    <a class="link link-hover" href="/#gallery">Gallery</a>
   </nav>
   <nav>
-    <h6 class="footer-title">Company</h6>
-    <a class="link link-hover">About us</a>
-    <a class="link link-hover">Contact</a>
-    <a class="link link-hover">Jobs</a>
-    <a class="link link-hover">Press kit</a>
+    <h6 class="footer-title">Visit Us</h6>
+    <address class="not-italic">
+      3400 Southport Avenue
+      <br />
+      Chicago, IL 60657
+      <br />
+      (555) 123-4567
+    </address>
   </nav>
   <nav>
-    <h6 class="footer-title">Legal</h6>
-    <a class="link link-hover">Terms of use</a>
-    <a class="link link-hover">Privacy policy</a>
-    <a class="link link-hover">Cookie policy</a>
+    <h6 class="footer-title">Hours</h6>
+    <p>Mon: 3pm – 10pm</p>
+    <p>Tues – Sun: 11:30am – 10pm</p>
   </nav>
 </footer>
