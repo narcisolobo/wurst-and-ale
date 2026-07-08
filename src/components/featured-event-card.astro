@@ -4,15 +4,13 @@ const { image, event, i } = Astro.props;
 const isReversed = i % 2 === 0;
 ---
 
-<div
-  class="mb-12 flex flex-col items-stretch justify-start gap-6 last:mb-0 md:flex-row"
->
-  <div class={`card bg-base-200 flex-1 ${isReversed ? "md:order-2" : ""}`}>
-    <div class="card-body">
-      <span class="text-4xl">{event.icon}</span>
-      <h3 class="card-title mt-2 text-2xl">{event.title}</h3>
-      <p class="mt-2 max-w-[60ch]">{event.description}</p>
-    </div>
+<div class="mb-6 grid grid-cols-1 items-center last:mb-0 md:grid-cols-2">
+  <div class={`p-4 bg-base-300 self-stretch ${isReversed ? "md:order-2" : ""}`}>
+    <h3 class="text-lg font-semibold md:text-2xl">
+      <span class="me-2 text-3xl">{event.icon}</span>
+      {event.title}
+    </h3>
+    <p class="mt-2 max-w-[60ch]">{event.description}</p>
   </div>
   <div class={isReversed ? "md:order-1" : ""}>
     <Picture
@@ -20,9 +18,9 @@ const isReversed = i % 2 === 0;
       alt={event.title}
       formats={["avif", "webp"]}
       fallbackFormat="jpg"
-      sizes="(max-width: 430px) 100vw, 430px"
-      widths={[215, 330, 430]}
-      class="w-full max-w-107.5 rounded-xl object-cover"
+      sizes="(max-width: 767px) 100vw, (max-width: 1023px) 356px, (max-width: 1279px) 484px, (max-width: 1535px) 548px, 740px"
+      widths={[356, 484, 548, 740]}
+      class="h-full w-full object-cover"
     />
   </div>
 </div>
