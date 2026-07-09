@@ -1,9 +1,12 @@
 ---
 import Layout from "@/layouts/layout.astro";
+import menuItems from "@/data/menu-items.json";
+import MenuTab from "@/components/menu-tab.astro";
+import MenuTabContent from "@/components/menu-tab-content.astro";
 ---
 
 <Layout isTransparent={false}>
-  <section id="gallery" class="bg-base-200 min-h-[80vh]">
+  <section id="menu" class="bg-base-200 min-h-[80vh]">
     <div class="container mx-auto px-4 pt-28 pb-12 xl:max-w-6xl">
       <h2
         class="text-base-content mb-2 text-xl font-semibold uppercase md:text-3xl"
@@ -12,54 +15,13 @@ import Layout from "@/layouts/layout.astro";
       </h2>
       <div class="menu-tabs">
         <div class="tabs tabs-box flex-nowrap overflow-x-auto">
-          <label class="tab shrink-0">
-            <input
-              type="radio"
-              name="menu-tabs"
-              id="tab-links"
-              class="hidden"
-              checked
-            />
-            Links
-          </label>
-          <label class="tab shrink-0">
-            <input
-              type="radio"
-              name="menu-tabs"
-              id="tab-burgers"
-              class="hidden"
-            />
-            Burgers
-          </label>
-          <label class="tab shrink-0">
-            <input
-              type="radio"
-              name="menu-tabs"
-              id="tab-appetizers"
-              class="hidden"
-            />
-            Appetizers
-          </label>
-          <!-- ...remaining categories -->
+          {menuItems.map((menuItem) => <MenuTab tabId={menuItem.category} />)}
         </div>
-
-        <!-- Panels, structurally unrelated to the tab strip above -->
-        <div
-          class="hidden py-4 pl-1 [.menu-tabs:has(#tab-links:checked)_&]:block"
-        >
-          <div class="bg-base-100 rounded-lg p-6 shadow">
-            <p>Links category content</p>
-          </div>
-        </div>
-        <div class="hidden py-4 [.menu-tabs:has(#tab-burgers:checked)_&]:block">
-          <p>Burgers category content</p>
-        </div>
-        <div
-          class="hidden py-4 [.menu-tabs:has(#tab-appetizers:checked)_&]:block"
-        >
-          <p>Appetizers category content</p>
-        </div>
-        <!-- ...remaining categories -->
+        {
+          menuItems.map((menuItem) => (
+            <MenuTabContent tabId={menuItem.category} items={menuItem.items} />
+          ))
+        }
       </div>
     </div>
   </section>

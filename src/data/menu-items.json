@@ -1,0 +1,147 @@
+[
+  {
+    "category": "links",
+    "items": [
+      {
+        "id": "charcoal-bratwurst",
+        "title": "Charcoal-Grilled Bratwurst",
+        "description": "Pork, beef, onion, and spice, finished over an open flame.",
+        "price": 13.99,
+        "subcategory": "traditional",
+        "isVegan": false,
+        "isSpicy": false,
+        "isPopular": true
+      },
+      {
+        "id": "smoked-polish",
+        "title": "Smoked Polish",
+        "description": "Beef, pork, garlic, and paprika, smoked low and slow.",
+        "price": 13.99,
+        "subcategory": "traditional",
+        "isVegan": false,
+        "isSpicy": false,
+        "isPopular": false
+      },
+      {
+        "id": "lakeview-garlic-link",
+        "title": "Lakeview Garlic Link",
+        "description": "A heavy hand of roasted garlic, beef, and pork, named for the neighborhood.",
+        "price": 14.49,
+        "subcategory": "traditional",
+        "isVegan": false,
+        "isSpicy": false,
+        "isPopular": false
+      },
+      {
+        "id": "hot-italian",
+        "title": "Hot Italian",
+        "description": "Pork, paprika, garlic, and a real kick of heat.",
+        "price": 13.99,
+        "subcategory": "traditional",
+        "isVegan": false,
+        "isSpicy": true,
+        "isPopular": false
+      },
+      {
+        "id": "duck-fig",
+        "title": "Duck & Fig",
+        "description": "Duck, pork, and mission figs, with a whisper of thyme.",
+        "price": 16.99,
+        "subcategory": "exotic",
+        "isVegan": false,
+        "isSpicy": false,
+        "isPopular": false
+      },
+      {
+        "id": "wild-boar-apple",
+        "title": "Wild Boar & Apple",
+        "description": "Wild boar, pork, and diced apple, with a touch of sage.",
+        "price": 16.99,
+        "subcategory": "exotic",
+        "isVegan": false,
+        "isSpicy": false,
+        "isPopular": true
+      },
+      {
+        "id": "venison-juniper",
+        "title": "Venison & Juniper",
+        "description": "Venison, beef, and crushed juniper berry, finished with black pepper.",
+        "price": 17.49,
+        "subcategory": "exotic",
+        "isVegan": false,
+        "isSpicy": false,
+        "isPopular": false
+      },
+      {
+        "id": "smoked-chicken-peach",
+        "title": "Smoked Chicken & Peach",
+        "description": "Smoked chicken, cilantro, and jalapeño, sweetened with fresh peach.",
+        "price": 14.99,
+        "subcategory": "chicken",
+        "isVegan": false,
+        "isSpicy": true,
+        "isPopular": false
+      },
+      {
+        "id": "buffalo-chicken-link",
+        "title": "Buffalo Chicken Link",
+        "description": "Chicken, celery, and a proper buffalo kick, served with blue cheese crumble.",
+        "price": 14.99,
+        "subcategory": "chicken",
+        "isVegan": false,
+        "isSpicy": true,
+        "isPopular": false
+      }
+    ]
+  },
+  {
+    "category": "burgers",
+    "items": [
+      {
+        "id": "bear-down-burger",
+        "title": "Bear Down Burger",
+        "description": "A double-stacked patty with bacon, cheddar, and a fried onion ring on top.",
+        "price": 15.99,
+        "isVegan": false,
+        "isSpicy": false,
+        "isPopular": true
+      },
+      {
+        "id": "wrigley-blue-burger",
+        "title": "Wrigley Blue Burger",
+        "description": "Blue cheese crumble, caramelized onion, and a garlic aioli.",
+        "price": 14.99,
+        "isVegan": false,
+        "isSpicy": false,
+        "isPopular": false
+      },
+      {
+        "id": "southport-melt",
+        "title": "Southport Melt",
+        "description": "Swiss cheese, grilled onions, and a mushroom cream sauce.",
+        "price": 14.49,
+        "isVegan": false,
+        "isSpicy": false,
+        "isPopular": false
+      },
+      {
+        "id": "firehouse-jalapeno-burger",
+        "title": "Firehouse Jalapeño Burger",
+        "description": "Pepper jack, fresh jalapeños, and a chipotle mayo that means business.",
+        "price": 15.49,
+        "isVegan": false,
+        "isSpicy": true,
+        "isPopular": false
+      },
+      {
+        "id": "vegan-underdog",
+        "title": "The Vegan Underdog",
+        "description": "A plant-based patty, vegan cheddar, and all the usual fixings — no compromises.",
+        "price": 15.99,
+        "isVegan": true,
+        "isSpicy": false,
+        "isPopular": false
+      }
+    ]
+  }
+]

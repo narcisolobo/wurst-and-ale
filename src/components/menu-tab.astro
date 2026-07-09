@@ -1,0 +1,23 @@
+---
+interface Props {
+  tabId: string;
+}
+
+const { tabId } = Astro.props;
+
+const capitalizeFirstLetter = (str: string) => {
+  if (!str) return "";
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};
+---
+
+<label class="tab shrink-0">
+  <input
+    type="radio"
+    name="menu-tabs"
+    id={tabId}
+    class="hidden"
+    checked={tabId === "links"}
+  />
+  {capitalizeFirstLetter(tabId)}
+</label>

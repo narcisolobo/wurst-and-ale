@@ -1,0 +1,67 @@
+---
+interface MenuItem {
+  id: string;
+  title: string;
+  description: string;
+  price: number;
+  subcategory?: string;
+  isVegan: boolean;
+  isSpicy: boolean;
+  isPopular: boolean;
+}
+
+interface Props {
+  tabId: string;
+  items: MenuItem[];
+}
+
+const { tabId, items } = Astro.props;
+
+// Group items by subcategory. Items with no subcategory all collapse
+// into a single group under the `null` key, which is rendered without
+// a heading — this lets burgers (no subcategories) and links (three
+// subcategories) share the exact same rendering logic below.
+const groups = items.reduce((acc, item) => {
+  const key = item.subcategory ?? null;
+  if (!acc.has(key)) acc.set(key, []);
+  acc.get(key)!.push(item);
+  return acc;
+}, new Map<string | null, MenuItem[]>());
+---
+
+<div class="tab-panel hidden py-4 pl-1" data-tab-panel={tabId}>
+  <div class="bg-base-100 rounded-lg p-6 shadow">
+    {
+      [...groups.entries()].map(([subcategory, groupItems]) => (
+        <div class="mb-8 last:mb-0">
+          {subcategory && (
+            <h3 class="mb-2 text-lg font-semibold uppercase">{subcategory}</h3>
+          )}
+          <table class="table-zebra table">
+            <tbody>
+              {groupItems.map((item) => (
+                <tr>
+                  <td>
+                    <p class="font-semibold">
+                      {item.title}
+                      <br />
+                      <span class="font-normal">{item.description}</span>
+                    </p>
+                  </td>
+                  <td class="text-right">${item.price.toFixed(2)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ))
+    }
+  </div>
+
+  <style
+    set:html={`
+.menu-tabs:has(#${tabId}:checked) [data-tab-panel="${tabId}"] {
+  display: block;
+}`}
+  ></style>
+</div>
