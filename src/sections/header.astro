@@ -1,29 +1,37 @@
 ---
 import { Menu } from "@lucide/astro";
+
+interface Props {
+  isTransparent?: boolean;
+}
+const { isTransparent = false } = Astro.props;
 ---
 
 <header
   id="site-header"
-  class="fixed top-0 right-0 left-0 z-40 w-full bg-transparent transition-all duration-300 ease-in-out"
+  class={`fixed top-0 right-0 left-0 z-40 w-full transition-all duration-300 ease-in-out ${
+    isTransparent
+      ? "bg-transparent text-base-100"
+      : "bg-base-100 text-base-content"
+  }`}
 >
   <div class="container mx-auto xl:max-w-6xl">
     <nav class="px-4 py-4">
       <div class="flex items-center justify-between">
         <div class="flex-1">
-          <h1
-            id="brand"
-            class="font-display text-base-100 text-2xl font-bold md:text-4xl"
-          >
+          <h1 id="brand" class="font-display text-2xl font-bold md:text-4xl">
             <a href="/">WURST & ALE</a>
           </h1>
-          <p class="text-base-100/80 hidden text-sm uppercase md:inline">
+          <p
+            class={`hidden text-sm uppercase md:inline ${isTransparent ? "text-base-100/80" : "text-base-content/80"}`}
+          >
             3400 Southport Ave. Chicago, IL 60631 | TEL: <a
               href="tel:+15551234567">(555) 123-4567</a
             >
           </p>
         </div>
         <div id="navigation" class="hidden flex-none lg:block">
-          <ul class="text-base-100 flex gap-4 text-2xl font-semibold uppercase">
+          <ul class="flex gap-4 text-2xl font-semibold uppercase">
             <li><a href="/menu">Menu</a></li>
             <li><a href="/events">Events</a></li>
             <li><a href="/contact">Contact</a></li>

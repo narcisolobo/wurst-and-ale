@@ -3,6 +3,11 @@ import Drawer from "@/sections/drawer.astro";
 import Footer from "@/sections/footer.astro";
 import Header from "@/sections/header.astro";
 import "@/styles/global.css";
+
+interface Props {
+  isTransparent?: boolean;
+}
+const { isTransparent = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -16,7 +21,7 @@ import "@/styles/global.css";
     <div class="drawer">
       <input id="mobile-navigation" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content flex flex-col">
-        <Header />
+        <Header isTransparent={isTransparent} />
         <slot />
         <Footer />
       </div>
