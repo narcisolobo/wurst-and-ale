@@ -1,0 +1,23 @@
+---
+interface PricingData {
+  includedCount: number;
+  additionalPrice: number;
+}
+
+interface Props {
+  itemLabel: string;
+  categoryLabel: string;
+  data: PricingData;
+}
+
+const { itemLabel, categoryLabel, data } = Astro.props;
+const { includedCount, additionalPrice } = data;
+const pluralLabel = includedCount === 1 ? itemLabel : `${itemLabel}s`;
+---
+
+<p class="bg-base-100 mt-2 ml-1 rounded-lg p-2">
+  {categoryLabel} come with your choice of{" "}
+  <strong class="font-semibold">
+    {`${includedCount} ${pluralLabel}`}
+  </strong>. Additional {itemLabel}s ${additionalPrice.toFixed(2)} each.
+</p>

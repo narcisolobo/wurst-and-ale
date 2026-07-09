@@ -1,8 +1,15 @@
 ---
-import Layout from "@/layouts/layout.astro";
-import menuItems from "@/data/menu-items.json";
-import MenuTab from "@/components/menu-tab.astro";
+import Legend from "@/components/legend.astro";
+import MenuAddOns from "@/components/menu-addons.astro";
 import MenuTabContent from "@/components/menu-tab-content.astro";
+import MenuTab from "@/components/menu-tab.astro";
+import SidebarPanel from "@/components/sidebar-panel.astro";
+import menuItems from "@/data/menu-items.json";
+import sauces from "@/data/sauces.json";
+import toppings from "@/data/toppings.json";
+import Layout from "@/layouts/layout.astro";
+import MenuAddOnsPricingPanel from "@/components/menu-addons-pricing-panel.astro";
+import MenuAddOnsPricing from "@/components/menu-addons-pricing.astro";
 ---
 
 <Layout isTransparent={false}>
@@ -17,11 +24,41 @@ import MenuTabContent from "@/components/menu-tab-content.astro";
         <div class="tabs tabs-box flex-nowrap overflow-x-auto">
           {menuItems.map((menuItem) => <MenuTab tabId={menuItem.category} />)}
         </div>
-        {
-          menuItems.map((menuItem) => (
-            <MenuTabContent tabId={menuItem.category} items={menuItem.items} />
-          ))
-        }
+        <MenuAddOnsPricingPanel tabIds={["links", "burgers"]}>
+          <MenuAddOnsPricing
+            itemLabel="topping"
+            categoryLabel="Links and burgers"
+            data={toppings}
+          />
+        </MenuAddOnsPricingPanel>
+        <MenuAddOnsPricingPanel tabIds={["sides"]}>
+          <MenuAddOnsPricing
+            itemLabel="sauce"
+            categoryLabel="Sides"
+            data={sauces}
+          />
+        </MenuAddOnsPricingPanel>
+        <div
+          class="flex flex-col items-start justify-between gap-4 md:flex-row"
+        >
+          {
+            menuItems.map((menuItem) => (
+              <MenuTabContent
+                tabId={menuItem.category}
+                items={menuItem.items}
+              />
+            ))
+          }
+          <aside class="w-full md:mt-4 md:flex-1">
+            <Legend />
+            <SidebarPanel tabIds={["links", "burgers"]}>
+              <MenuAddOns title="Toppings" data={toppings} />
+            </SidebarPanel>
+            <SidebarPanel tabIds={["sides"]}>
+              <MenuAddOns title="Sauces" data={sauces} />
+            </SidebarPanel>
+          </aside>
+        </div>
       </div>
     </div>
   </section>

@@ -1,0 +1,21 @@
+---
+interface Props {
+  tabIds: string[];
+}
+
+const { tabIds } = Astro.props;
+const panelId = tabIds.join("-");
+
+const rules = tabIds
+  .map(
+    (id) =>
+      `.menu-tabs:has(#${id}:checked) [data-pricing-panel="${panelId}"] { display: block; }`,
+  )
+  .join(" ");
+---
+
+<div class="pricing-panel hidden" data-pricing-panel={panelId}>
+  <slot />
+</div>
+
+<style set:html={rules}></style>

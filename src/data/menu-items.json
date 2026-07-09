@@ -143,5 +143,55 @@
         "isPopular": false
       }
     ]
+  },
+  {
+    "category": "sides",
+    "items": [
+      {
+        "id": "twice-fried-fries",
+        "title": "Twice-Fried Fries",
+        "description": "Fried once for the crisp, fried twice for the crunch. Tossed with sea salt, served with your choice of dip.",
+        "price": 7.99,
+        "isVegan": true,
+        "isSpicy": false,
+        "isPopular": true
+      },
+      {
+        "id": "bavarian-pretzel-bites",
+        "title": "Bavarian Pretzel Bites",
+        "description": "Soft-baked and salted, served warm with a side of beer cheese and spicy mustard.",
+        "price": 8.99,
+        "isVegan": false,
+        "isSpicy": false,
+        "isPopular": false
+      },
+      {
+        "id": "beer-battered-onion-rings",
+        "title": "Beer-Battered Onion Rings",
+        "description": "Thick-cut and crisp, battered in our house lager, served with chipotle aioli.",
+        "price": 8.49,
+        "isVegan": false,
+        "isSpicy": false,
+        "isPopular": false
+      },
+      {
+        "id": "loaded-tater-tots",
+        "title": "Loaded Tater Tots",
+        "description": "Bacon, cheddar, and jalapeño piled high, finished with a drizzle of ranch.",
+        "price": 9.99,
+        "isVegan": false,
+        "isSpicy": true,
+        "isPopular": false
+      },
+      {
+        "id": "charred-sauerkraut-fritters",
+        "title": "Charred Sauerkraut Fritters",
+        "description": "Crisp-fried sauerkraut fritters with a smoky char, served with vegan aioli.",
+        "price": 8.49,
+        "isVegan": true,
+        "isSpicy": false,
+        "isPopular": false
+      }
+    ]
   }
 ]

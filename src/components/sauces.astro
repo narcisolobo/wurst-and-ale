@@ -1,0 +1,8 @@
+---
+import sauces from "@/data/sauces.json";
+---
+
+<div class="bg-base-100 rounded-lg p-6 shadow">
+  <h3 class="card-title mb-2 font-semibold uppercase">Sauces</h3>
+  {sauces.map((sauce) => <p>{sauce}</p>)}
+</div>
