@@ -1,0 +1,52 @@
+---
+interface BeerItem {
+  id: string;
+  title: string;
+  description: string;
+  price: number;
+  origin: string;
+  abv: string;
+  pourSize: string;
+}
+
+interface Props {
+  tabId: string;
+  items: BeerItem[];
+}
+
+const { tabId, items } = Astro.props;
+---
+
+<div class="tab-panel mt-4 hidden" data-tab-panel={tabId}>
+  <div class="bg-base-100 rounded-lg p-6 shadow">
+    <table class="table-zebra table">
+      <tbody>
+        {
+          items.map((item) => (
+            <tr data-beer-item data-origin={item.origin}>
+              <td>
+                <div class="flex">
+                  <p class="font-semibold">{item.title} </p>
+                </div>
+                <p>{item.description}</p>
+                <p>
+                  <small class="text-xs">{`${item.abv} ABV | ${item.pourSize} pour`}</small>
+                </p>
+              </td>
+              <td class="text-right align-top md:align-middle">
+                ${item.price.toFixed(2)}
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <style
+    set:html={`
+.menu-tabs:has(#${tabId}:checked) [data-tab-panel="${tabId}"] {
+  display: block;
+}`}
+  ></style>
+</div>

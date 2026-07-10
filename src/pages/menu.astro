@@ -8,7 +8,7 @@ import menuItems from "@/data/menu-items.json";
 import sauces from "@/data/sauces.json";
 import toppings from "@/data/toppings.json";
 import Layout from "@/layouts/layout.astro";
-import MenuAddOnsPricingPanel from "@/components/menu-addons-pricing-panel.astro";
+import TopbarPanel from "@/components/topbar-panel.astro";
 import MenuAddOnsPricing from "@/components/menu-addons-pricing.astro";
 ---
 
@@ -22,22 +22,26 @@ import MenuAddOnsPricing from "@/components/menu-addons-pricing.astro";
       </h2>
       <div class="menu-tabs">
         <div class="tabs tabs-box flex-nowrap overflow-x-auto">
-          {menuItems.map((menuItem) => <MenuTab tabId={menuItem.category} />)}
+          {
+            menuItems.map((menuItem) => (
+              <MenuTab tabId={menuItem.category} checkedTab="links" />
+            ))
+          }
         </div>
-        <MenuAddOnsPricingPanel tabIds={["links", "burgers"]}>
+        <TopbarPanel tabIds={["links", "burgers"]}>
           <MenuAddOnsPricing
             itemLabel="topping"
             categoryLabel="Links and burgers"
             data={toppings}
           />
-        </MenuAddOnsPricingPanel>
-        <MenuAddOnsPricingPanel tabIds={["sides"]}>
+        </TopbarPanel>
+        <TopbarPanel tabIds={["sides"]}>
           <MenuAddOnsPricing
             itemLabel="sauce"
             categoryLabel="Sides"
             data={sauces}
           />
-        </MenuAddOnsPricingPanel>
+        </TopbarPanel>
         <div
           class="flex flex-col items-start justify-between gap-4 md:flex-row"
         >

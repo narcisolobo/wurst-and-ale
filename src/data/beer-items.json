@@ -1,0 +1,61 @@
+[
+  {
+    "category": "hoppy",
+    "items": [
+      {
+        "id": "northbound-haze",
+        "title": "Northbound Haze",
+        "description": "A juicy, hazy IPA from a small Midwest craft outfit, built for drinkability over bitterness.",
+        "price": 8.0,
+        "origin": "craft",
+        "abv": "6.8%",
+        "pourSize": "16oz"
+      },
+      {
+        "id": "verge-west-coast-ipa",
+        "title": "Verge West Coast IPA",
+        "description": "Pine and citrus up front, a clean bitter finish — the classic West Coast style done right.",
+        "price": 8.5,
+        "origin": "craft",
+        "abv": "7.1%",
+        "pourSize": "16oz"
+      },
+      {
+        "id": "anchor-line-pale-ale",
+        "title": "Anchor Line Pale Ale",
+        "description": "An easygoing domestic pale ale with a light citrus hop character, built for a long session.",
+        "price": 7.0,
+        "origin": "domestic",
+        "abv": "5.4%",
+        "pourSize": "16oz"
+      },
+      {
+        "id": "blackout-double-ipa",
+        "title": "Blackout Double IPA",
+        "description": "A hazy double IPA loaded with tropical hops — sneaky strong, worth pacing yourself.",
+        "price": 10.5,
+        "origin": "craft",
+        "abv": "8.6%",
+        "pourSize": "12oz"
+      },
+      {
+        "id": "steel-city-session-ipa",
+        "title": "Steel City Session IPA",
+        "description": "All the hop character, a fraction of the ABV — built for round two.",
+        "price": 7.0,
+        "origin": "domestic",
+        "abv": "4.5%",
+        "pourSize": "16oz"
+      },
+      {
+        "id": "southern-cross-hop-lager",
+        "title": "Southern Cross Hop Lager",
+        "description": "A New Zealand import lager, dry-hopped for a bright, fruit-forward twist on a lager base.",
+        "price": 9.5,
+        "origin": "import",
+        "abv": "5.2%",
+        "pourSize": "16oz"
+      }
+    ]
+  }
+]
