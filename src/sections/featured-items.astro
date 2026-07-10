@@ -18,10 +18,9 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
       {
         featuredItems.map(async (item) => {
           const imagePath = `/src/images/item-images/${item.image}`;
-          const imageModule = images[imagePath];
-          if (!imageModule) throw new Error(`Image not found: ${imagePath}`);
-          const image = (await imageModule()).default;
-
+          const imageLoader = images[imagePath];
+          if (!imageLoader) throw new Error(`Image not found: ${imagePath}`);
+          const image = (await imageLoader()).default;
           return <FeaturedItemCard image={image} item={item} />;
         })
       }

@@ -17,8 +17,9 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
     {
       featuredEvents.map(async (event, i) => {
         const imagePath = `/src/images/event-images/${event.image}`;
-        const imageModule = images[imagePath];
-        const image = (await imageModule()).default;
+        const imageLoader = images[imagePath];
+        if (!imageLoader) throw new Error(`Image not found: ${imagePath}`);
+        const image = (await imageLoader()).default;
         return <FeaturedEventCard image={image} event={event} i={i} />;
       })
     }
