@@ -1,4 +1,9 @@
 ---
+import Craft from "@/icons/craft.astro";
+import Domestic from "@/icons/domestic.astro";
+import Import from "@/icons/import.astro";
+import BeerFilterPanel from "./beer-filter-panel.astro";
+
 interface BeerItem {
   id: string;
   title: string;
@@ -19,13 +24,19 @@ const { tabId, items } = Astro.props;
 
 <div class="tab-panel mt-4 hidden" data-tab-panel={tabId}>
   <div class="bg-base-100 rounded-lg p-6 shadow">
-    <table class="table-zebra table">
+    <BeerFilterPanel tabId={tabId} />
+    <table class="table">
       <tbody>
         {
           items.map((item) => (
             <tr data-beer-item data-origin={item.origin}>
               <td>
                 <div class="flex">
+                  {item.origin === "craft" && <Craft classes={["mr-1"]} />}
+                  {item.origin === "domestic" && (
+                    <Domestic classes={["mr-1"]} />
+                  )}
+                  {item.origin === "import" && <Import classes={["mr-1"]} />}
                   <p class="font-semibold">{item.title} </p>
                 </div>
                 <p>{item.description}</p>

@@ -1,6 +1,7 @@
 [
   {
     "category": "hoppy",
+    "label": "Hoppy (IPAs)",
     "items": [
       {
         "id": "northbound-haze",
@@ -54,6 +55,168 @@
         "price": 9.5,
         "origin": "import",
         "abv": "5.2%",
+        "pourSize": "16oz"
+      }
+    ]
+  },
+  {
+    "category": "lagers-pilsners",
+    "label": "Lagers & Pilsners",
+    "items": [
+      {
+        "id": "clearwater-helles",
+        "title": "Clearwater Helles",
+        "description": "A traditional German-style Helles lager — soft bread crust malt, clean and easy-drinking.",
+        "price": 7.5,
+        "origin": "craft",
+        "abv": "5.0%",
+        "pourSize": "16oz"
+      },
+      {
+        "id": "cantina-lager",
+        "title": "Cantina Lager",
+        "description": "A crisp Mexican-style lager with a light corn sweetness, best served with a lime wedge.",
+        "price": 7.0,
+        "origin": "import",
+        "abv": "4.6%",
+        "pourSize": "16oz"
+      },
+      {
+        "id": "brasserie-pils",
+        "title": "Brasserie Pils",
+        "description": "A Belgian-style pilsner, dry-hopped for a touch more bitterness than its German cousins.",
+        "price": 8.0,
+        "origin": "import",
+        "abv": "5.2%",
+        "pourSize": "16oz"
+      },
+      {
+        "id": "roadside-light",
+        "title": "Roadside Light",
+        "description": "A straightforward American light lager — low calorie, high drinkability, zero pretense.",
+        "price": 6.0,
+        "origin": "domestic",
+        "abv": "4.1%",
+        "pourSize": "16oz"
+      },
+      {
+        "id": "amber-hour-vienna-lager",
+        "title": "Amber Hour Vienna Lager",
+        "description": "A malt-forward Vienna lager with notes of toasted bread and light caramel.",
+        "price": 7.5,
+        "origin": "craft",
+        "abv": "5.4%",
+        "pourSize": "16oz"
+      },
+      {
+        "id": "millrace-dunkel",
+        "title": "Millrace Dunkel",
+        "description": "A dark Bavarian-style lager, rich with toasted malt and a whisper of chocolate.",
+        "price": 8.0,
+        "origin": "domestic",
+        "abv": "5.6%",
+        "pourSize": "16oz"
+      }
+    ]
+  },
+  {
+    "category": "porters-stouts",
+    "label": "Porters & Stouts",
+    "items": [
+      {
+        "id": "coal-tender-porter",
+        "title": "Coal Tender Porter",
+        "description": "A robust porter with notes of dark chocolate and roasted coffee.",
+        "price": 8.0,
+        "origin": "craft",
+        "abv": "5.8%",
+        "pourSize": "16oz"
+      },
+      {
+        "id": "midnight-freight-stout",
+        "title": "Midnight Freight Stout",
+        "description": "A dry stout with a firm roasted bitterness and a thin, lasting head.",
+        "price": 7.5,
+        "origin": "domestic",
+        "abv": "5.0%",
+        "pourSize": "16oz"
+      },
+      {
+        "id": "black-anchor-imperial-stout",
+        "title": "Black Anchor Imperial Stout",
+        "description": "A rich imperial stout aged on oak, heavy with vanilla and dark fruit.",
+        "price": 11.0,
+        "origin": "craft",
+        "abv": "9.2%",
+        "pourSize": "12oz"
+      },
+      {
+        "id": "harborline-oatmeal-stout",
+        "title": "Harborline Oatmeal Stout",
+        "description": "A silky oatmeal stout, smooth and slightly sweet, with a whisper of cocoa.",
+        "price": 8.0,
+        "origin": "domestic",
+        "abv": "5.6%",
+        "pourSize": "16oz"
+      },
+      {
+        "id": "abbey-gate-stout",
+        "title": "Abbey Gate Stout",
+        "description": "A Belgian-influenced stout with dark caramel sweetness and a dry finish.",
+        "price": 9.0,
+        "origin": "import",
+        "abv": "6.5%",
+        "pourSize": "16oz"
+      }
+    ]
+  },
+  {
+    "category": "wheat-belgian",
+    "label": "Wheats & Belgians",
+    "items": [
+      {
+        "id": "cloudline-hefeweizen",
+        "title": "Cloudline Hefeweizen",
+        "description": "A classic German wheat beer with notes of banana and clove, unfiltered and cloudy.",
+        "price": 7.5,
+        "origin": "craft",
+        "abv": "5.3%",
+        "pourSize": "16oz"
+      },
+      {
+        "id": "brightwell-witbier",
+        "title": "Brightwell Witbier",
+        "description": "A Belgian-style wit brewed with coriander and orange peel, light and refreshing.",
+        "price": 7.5,
+        "origin": "domestic",
+        "abv": "5.0%",
+        "pourSize": "16oz"
+      },
+      {
+        "id": "abbaye-tripel",
+        "title": "Abbaye Tripel",
+        "description": "A strong Belgian tripel, golden and effervescent, with notes of pear and clove.",
+        "price": 10.0,
+        "origin": "import",
+        "abv": "9.0%",
+        "pourSize": "12oz"
+      },
+      {
+        "id": "old-cobblestone-dubbel",
+        "title": "Old Cobblestone Dubbel",
+        "description": "A malty Belgian dubbel with dark fruit sweetness and a warming finish.",
+        "price": 9.0,
+        "origin": "import",
+        "abv": "7.5%",
+        "pourSize": "16oz"
+      },
+      {
+        "id": "harvest-moon-wheat",
+        "title": "Harvest Moon Wheat",
+        "description": "An American wheat ale, light-bodied with a mild citrus edge.",
+        "price": 7.0,
+        "origin": "domestic",
+        "abv": "4.8%",
         "pourSize": "16oz"
       }
     ]

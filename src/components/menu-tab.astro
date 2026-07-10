@@ -2,14 +2,10 @@
 interface Props {
   tabId: string;
   checkedTab: string;
+  label: string;
 }
 
-const { tabId, checkedTab } = Astro.props;
-
-const capitalizeFirstLetter = (str: string) => {
-  if (!str) return "";
-  return str.charAt(0).toUpperCase() + str.slice(1);
-};
+const { tabId, checkedTab, label } = Astro.props;
 ---
 
 <label class="tab shrink-0">
@@ -20,5 +16,5 @@ const capitalizeFirstLetter = (str: string) => {
     class="hidden"
     checked={tabId === checkedTab}
   />
-  {capitalizeFirstLetter(tabId)}
+  {label}
 </label>

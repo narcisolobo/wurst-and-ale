@@ -1,38 +1,49 @@
-<div class="bg-base-100 mt-4 flex gap-4 rounded-md p-2 text-sm shadow">
+---
+interface Props {
+  tabId: string;
+}
+
+const { tabId } = Astro.props;
+
+const domesticId = `origin-domestic-${tabId}`;
+const craftId = `origin-craft-${tabId}`;
+const importId = `origin-import-${tabId}`;
+---
+
+<div class="border-b-base-300 flex gap-4 border-b pb-2 text-sm">
   <span class="font-semibold">Filter by origin:</span>
   <label class="flex cursor-pointer items-center gap-2">
-    <input type="checkbox" id="origin-domestic" class="checkbox checkbox-xs" />
+    <input type="checkbox" id={domesticId} class="checkbox checkbox-xs" />
     Domestic
   </label>
   <label class="flex cursor-pointer items-center gap-2">
-    <input type="checkbox" id="origin-craft" class="checkbox checkbox-xs" />
+    <input type="checkbox" id={craftId} class="checkbox checkbox-xs" />
     Craft & Local
   </label>
   <label class="flex cursor-pointer items-center gap-2">
-    <input type="checkbox" id="origin-import" class="checkbox checkbox-xs" />
+    <input type="checkbox" id={importId} class="checkbox checkbox-xs" />
     Import
   </label>
 </div>
 
-<style is:global>
-  [data-beer-item] {
+<style is:global set:html={`
+  [data-tab-panel="${tabId}"] [data-beer-item] {
     display: none;
   }
-  .menu-tabs:not(:has(#origin-domestic:checked)):not(
-      :has(#origin-craft:checked)
-    ):not(:has(#origin-import:checked))
-    [data-beer-item] {
+  .menu-tabs:not(:has(#${domesticId}:checked)):not(:has(#${craftId}:checked)):not(:has(#${importId}:checked))
+    [data-tab-panel="${tabId}"] [data-beer-item] {
     display: table-row;
   }
-  .menu-tabs:has(#origin-domestic:checked)
-    [data-beer-item][data-origin="domestic"] {
+  .menu-tabs:has(#${domesticId}:checked)
+    [data-tab-panel="${tabId}"] [data-beer-item][data-origin="domestic"] {
     display: table-row;
   }
-  .menu-tabs:has(#origin-craft:checked) [data-beer-item][data-origin="craft"] {
+  .menu-tabs:has(#${craftId}:checked)
+    [data-tab-panel="${tabId}"] [data-beer-item][data-origin="craft"] {
     display: table-row;
   }
-  .menu-tabs:has(#origin-import:checked)
-    [data-beer-item][data-origin="import"] {
+  .menu-tabs:has(#${importId}:checked)
+    [data-tab-panel="${tabId}"] [data-beer-item][data-origin="import"] {
     display: table-row;
   }
-</style>
+`}></style>

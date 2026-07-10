@@ -1,15 +1,15 @@
 ---
 import Legend from "@/components/legend.astro";
-import MenuAddOns from "@/components/menu-addons.astro";
-import MenuTabContent from "@/components/menu-tab-content.astro";
+import FoodAddOns from "@/components/food-addons.astro";
+import FoodTabContent from "@/components/food-tab-content.astro";
 import MenuTab from "@/components/menu-tab.astro";
 import SidebarPanel from "@/components/sidebar-panel.astro";
-import menuItems from "@/data/menu-items.json";
+import foodItems from "@/data/food-items.json";
 import sauces from "@/data/sauces.json";
 import toppings from "@/data/toppings.json";
 import Layout from "@/layouts/layout.astro";
 import TopbarPanel from "@/components/topbar-panel.astro";
-import MenuAddOnsPricing from "@/components/menu-addons-pricing.astro";
+import FoodAddOnsPricing from "@/components/food-addons-pricing.astro";
 ---
 
 <Layout isTransparent={false}>
@@ -18,25 +18,29 @@ import MenuAddOnsPricing from "@/components/menu-addons-pricing.astro";
       <h2
         class="text-base-content mb-2 text-xl font-semibold uppercase md:text-3xl"
       >
-        Menu
+        Food Menu
       </h2>
       <div class="menu-tabs">
         <div class="tabs tabs-box flex-nowrap overflow-x-auto">
           {
-            menuItems.map((menuItem) => (
-              <MenuTab tabId={menuItem.category} checkedTab="links" />
+            foodItems.map((foodItem) => (
+              <MenuTab
+                tabId={foodItem.category}
+                checkedTab="links"
+                label={foodItem.label}
+              />
             ))
           }
         </div>
         <TopbarPanel tabIds={["links", "burgers"]}>
-          <MenuAddOnsPricing
+          <FoodAddOnsPricing
             itemLabel="topping"
             categoryLabel="Links and burgers"
             data={toppings}
           />
         </TopbarPanel>
         <TopbarPanel tabIds={["sides"]}>
-          <MenuAddOnsPricing
+          <FoodAddOnsPricing
             itemLabel="sauce"
             categoryLabel="Sides"
             data={sauces}
@@ -46,20 +50,20 @@ import MenuAddOnsPricing from "@/components/menu-addons-pricing.astro";
           class="flex flex-col items-start justify-between gap-4 md:flex-row"
         >
           {
-            menuItems.map((menuItem) => (
-              <MenuTabContent
-                tabId={menuItem.category}
-                items={menuItem.items}
+            foodItems.map((foodItem) => (
+              <FoodTabContent
+                tabId={foodItem.category}
+                items={foodItem.items}
               />
             ))
           }
           <aside class="w-full md:mt-4 md:flex-1">
             <Legend />
             <SidebarPanel tabIds={["links", "burgers"]}>
-              <MenuAddOns title="Toppings" data={toppings} />
+              <FoodAddOns title="Toppings" data={toppings} />
             </SidebarPanel>
             <SidebarPanel tabIds={["sides"]}>
-              <MenuAddOns title="Sauces" data={sauces} />
+              <FoodAddOns title="Sauces" data={sauces} />
             </SidebarPanel>
           </aside>
         </div>

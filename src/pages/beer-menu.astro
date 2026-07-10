@@ -1,5 +1,4 @@
 ---
-import BeerFilterPanel from "@/components/beer-filter-panel.astro";
 import BeerTabContent from "@/components/beer-tab-content.astro";
 import MenuTab from "@/components/menu-tab.astro";
 import beerItems from "@/data/beer-items.json";
@@ -18,14 +17,15 @@ import Layout from "@/layouts/layout.astro";
         <div class="tabs tabs-box flex-nowrap overflow-x-auto">
           {
             beerItems.map((beerItem) => (
-              <MenuTab tabId={beerItem.category} checkedTab="hoppy" />
+              <MenuTab
+                tabId={beerItem.category}
+                checkedTab="hoppy"
+                label={beerItem.label}
+              />
             ))
           }
         </div>
-        <BeerFilterPanel />
-        <div
-          class="flex flex-col items-start justify-between gap-4 md:flex-row"
-        >
+        <div class="flex flex-col items-start justify-between gap-4">
           {
             beerItems.map((beerItem) => (
               <BeerTabContent

@@ -1,6 +1,7 @@
 [
   {
     "category": "links",
+    "label": "Links",
     "items": [
       {
         "id": "charcoal-bratwurst",
@@ -96,6 +97,7 @@
   },
   {
     "category": "burgers",
+    "label": "Burgers",
     "items": [
       {
         "id": "bear-down-burger",
@@ -146,6 +148,7 @@
   },
   {
     "category": "sides",
+    "label": "Sides & Starters",
     "items": [
       {
         "id": "twice-fried-fries",
