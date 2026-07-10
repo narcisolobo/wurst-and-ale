@@ -1,0 +1,70 @@
+{
+  "recurringEvent": {
+    "id": "pub-trivia",
+    "title": "Pub Trivia",
+    "description": "Every Wednesday, grab your smartest friends and put your knowledge to the test. Bragging rights, prizes, and a round on the house for the winning table.",
+    "dayOfWeek": 3
+  },
+  "monthlyFlagships": [
+    {
+      "month": 0,
+      "day": 24,
+      "title": "The Wing Roast",
+      "description": "Local funnyman Big Sal Marchetti roasts contestants as the wings get hotter, one round at a time. Drink the milk, you're out — last mouth standing wins bragging rights and a pair of tickets to Big Sal's next show."
+    },
+    {
+      "month": 1,
+      "day": 21,
+      "title": "Craft Beer Tasting",
+      "description": "A rotating lineup of seasonal and hard-to-find brews, guided by our own staff. Come with an open mind and leave with a new favorite."
+    },
+    {
+      "month": 2,
+      "day": 21,
+      "title": "Piece of Cake",
+      "description": "Teams race the clock on a 300-piece puzzle, no box-lid peeking allowed. Fastest table wins a round of drinks on the house — and an actual cake, because we don't do irony halfway."
+    },
+    {
+      "month": 4,
+      "day": 16,
+      "title": "Craft Sausage Tasting",
+      "description": "Small plates, big flavors. Sample our traditional, exotic, and seasonal links side by side — including a few specials you won't find on the regular menu."
+    },
+    {
+      "month": 7,
+      "day": 8,
+      "title": "Da Coach Watch Party",
+      "description": "Bears preseason kicks off, and so does our Mike Ditka lookalike contest — free beer to whoever channels Da Coach best. Mustache optional, scowl mandatory."
+    },
+    {
+      "month": 7,
+      "day": 22,
+      "title": "Fantasy Draft HQ Kickoff",
+      "description": "Free WiFi, a full bar, and zero judgment if you draft a kicker in the third round. Bring your laptop, your league, and your worst trash talk."
+    },
+    {
+      "month": 8,
+      "day": 19,
+      "title": "Craft Beer Tasting",
+      "description": "A rotating lineup of seasonal and hard-to-find brews, guided by our own staff. Come with an open mind and leave with a new favorite."
+    },
+    {
+      "month": 9,
+      "day": 17,
+      "title": "Northshore Takeover Night",
+      "description": "Northshore Ale Works takes over our taps for the night, pouring their full lineup alongside ours. Meet the brewers, compare notes, and find your new favorite without leaving the bar."
+    },
+    {
+      "month": 10,
+      "day": 14,
+      "title": "Craft Sausage Tasting",
+      "description": "Small plates, big flavors. Sample our traditional, exotic, and seasonal links side by side — including a few specials you won't find on the regular menu."
+    },
+    {
+      "month": 11,
+      "day": 6,
+      "title": "The Second City Solstice Returns",
+      "description": "Our winter warmer returns for the season — dark, rich, and built for standing around outside Wrigley in December. Available only through the new year, so don't sleep on it."
+    }
+  ]
+}
