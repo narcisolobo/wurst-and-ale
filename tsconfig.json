@@ -9,6 +9,7 @@
       "@/icons/*": ["./src/icons/*"],
       "@/images/*": ["./src/images/*"],
       "@/layouts/*": ["./src/layouts/*"],
+      "@/lib/*": ["./src/lib/*"],
       "@/pages/*": ["./src/pages/*"],
       "@/sections/*": ["./src/sections/*"],
       "@/styles/*": ["./src/styles/*"]

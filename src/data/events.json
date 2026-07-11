@@ -1,10 +1,4 @@
 {
-  "recurringEvent": {
-    "id": "pub-trivia",
-    "title": "Pub Trivia",
-    "description": "Every Wednesday, grab your smartest friends and put your knowledge to the test. Bragging rights, prizes, and a round on the house for the winning table.",
-    "dayOfWeek": 3
-  },
   "monthlyFlagships": [
     {
       "month": 0,

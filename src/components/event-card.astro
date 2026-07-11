@@ -1,0 +1,29 @@
+---
+interface Event {
+  day: number;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  month: string;
+  event: Event;
+}
+
+const {
+  month,
+  event: { day, title, description },
+} = Astro.props;
+---
+
+<div class="card bg-base-100 mb-6 flex-1 shadow-sm">
+  <div class="card-body">
+    <span class="text-sm font-normal uppercase">{`${month} ${day}`}</span>
+    <h2 class="card-title">
+      {title}
+    </h2>
+    <p class="max-w-[60ch]">
+      {description}
+    </p>
+  </div>
+</div>
