@@ -1,43 +1,46 @@
-# Astro Starter Kit: Minimal
+# Wurst & Ale
 
-```sh
-pnpm create astro@latest -- --template minimal
-```
+_Sports. Beer. Encased meats._
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+**[Live Demo](https://restaurant-demo.narcisolobo.com)**
 
-## 🚀 Project Structure
+![Wurst & Ale Screenshot](./screenshot.png)
 
-Inside of your Astro project, you'll see the following folders and files:
+Wurst & Ale is a fictional Chicago gastropub site built to showcase front-end architecture and design skills — a complete, content-driven small business site with a food menu, beer menu, events calendar, and photo gallery, all built on Astro.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+**Note:** Wurst & Ale is not a real business. This project was created solely for portfolio/demonstration purposes and is not affiliated with any actual restaurant, bar, or establishment.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Motivation
 
-Any static assets, like images, can be placed in the `public/` directory.
+This project set out to answer a simple question: what would it take to build a small local business a genuinely useful website, not just a template with their name slapped on it? Food and beer menus with category filtering, a self-updating events calendar, an optimized photo gallery with a custom lightbox, and full responsive image handling throughout — all without a single line of client-side JavaScript unless it was actually earning its place.
 
-## 🧞 Commands
+---
 
-All commands are run from the root of the project, from a terminal:
+## Tech Stack
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+## 🛠️ Tech Stack
 
-## 👀 Want to learn more?
+- **Frontend:** [Astro](https://astro.build), [TypeScript](https://www.typescriptlang.org)
+- **UI:** [Tailwind CSS](https://tailwindcss.com), [DaisyUI](https://daisyui.com), [Tabler Icons](https://tabler.io/icons)
+- **Hosting:** [Vercel](https://vercel.com)
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+
+## Features
+
+- Tabbed food and beer menus with category and subcategory grouping
+- Multi-select origin filtering on the beer menu (domestic, craft & local, import)
+- Dietary/spice/popularity badges across the food menu
+- Self-updating events calendar — always shows the current month plus the next two, with no manual maintenance required
+- Custom lightbox photo gallery with aspect-ratio-aware sizing for both landscape and portrait images
+- Fully responsive images throughout, using Astro's built-in image optimization
+- FAQ accordion, social links, and an interactive map on the Contact page
+- SEO metadata configured for professional link previews, with search indexing intentionally disabled since this is a demo site
+
+---
+
+## License
+
+This project is licensed under the [MIT License](./LICENSE).
