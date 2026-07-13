@@ -3,20 +3,26 @@ import Drawer from "@/sections/drawer.astro";
 import Footer from "@/sections/footer.astro";
 import Header from "@/sections/header.astro";
 import "@/styles/global.css";
+import Head from "./head.astro";
 
 interface Props {
   isTransparent?: boolean;
+  title: string;
+  description?: string;
 }
-const { isTransparent = false } = Astro.props;
+
+const defaultDescription =
+  "Wurst & Ale is a fictional Chicago gastropub built to showcase full-stack web development and design.";
+const {
+  title,
+  isTransparent = true,
+  description = defaultDescription,
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wurst and Ale</title>
-  </head>
+  <Head title={title} description={description} />
   <body class="relative">
     <div class="drawer">
       <input id="mobile-navigation" type="checkbox" class="drawer-toggle" />
