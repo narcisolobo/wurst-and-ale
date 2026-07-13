@@ -1,0 +1,30 @@
+---
+interface Props {
+  size?: number;
+  strokeWidth?: number;
+  classes?: string[];
+}
+
+const { size = 24, strokeWidth = 1.5, classes = [] } = Astro.props;
+---
+
+<svg
+  role="img"
+  aria-label="instagram"
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width={strokeWidth}
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class:list={classes}
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path
+    d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4l0 -8"
+  ></path>
+  <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+  <path d="M16.5 7.5v.01"></path>
+</svg>
