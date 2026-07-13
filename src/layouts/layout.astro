@@ -28,7 +28,9 @@ const {
       <input id="mobile-navigation" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content flex flex-col">
         <Header isTransparent={isTransparent} />
-        <slot />
+        <main>
+          <slot />
+        </main>
         <Footer />
       </div>
       <Drawer />
