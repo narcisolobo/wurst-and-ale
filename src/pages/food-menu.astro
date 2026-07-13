@@ -1,19 +1,44 @@
 ---
-import Legend from "@/components/legend.astro";
+import FoodAddOnsPricing from "@/components/food-addons-pricing.astro";
 import FoodAddOns from "@/components/food-addons.astro";
 import FoodTabContent from "@/components/food-tab-content.astro";
+import Legend from "@/components/legend.astro";
 import MenuTab from "@/components/menu-tab.astro";
 import SidebarPanel from "@/components/sidebar-panel.astro";
+import TopbarPanel from "@/components/topbar-panel.astro";
 import foodItems from "@/data/food-items.json";
 import sauces from "@/data/sauces.json";
 import toppings from "@/data/toppings.json";
+import foodMenuHeader from "@/images/food-menu/food-menu-header.jpg";
 import Layout from "@/layouts/layout.astro";
-import TopbarPanel from "@/components/topbar-panel.astro";
-import FoodAddOnsPricing from "@/components/food-addons-pricing.astro";
+import { getImage } from "astro:assets";
+
+const headerImage = await getImage({
+  src: foodMenuHeader,
+  format: "avif",
+  quality: 70,
+});
 ---
 
-<Layout isTransparent={false}>
-  <section id="menu" class="bg-base-200 min-h-[80vh]">
+<Layout isTransparent>
+  <section
+    id="food-menu-hero"
+    class="relative flex min-h-[80vh] items-center justify-center bg-cover bg-center bg-no-repeat bg-origin-content"
+    style={`background-image: url(${headerImage.src});`}
+  >
+    <div
+      class="pointer-events-none absolute inset-0 bg-linear-to-b from-black/75 via-black/10 to-transparent"
+    >
+    </div>
+    <div class="flex flex-col items-center gap-2">
+      <h2
+        class="font-display text-base-100 bg-primary relative z-10 p-2 px-4 text-4xl font-bold tracking-wide uppercase"
+      >
+        Food Menu
+      </h2>
+    </div>
+  </section>
+  <section id="food-menu" class="bg-base-200 min-h-[80vh]">
     <div class="container mx-auto px-4 pt-28 pb-12 xl:max-w-6xl">
       <h2
         class="text-base-content mb-6 text-xl font-semibold uppercase md:text-3xl"
