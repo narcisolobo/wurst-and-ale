@@ -3,7 +3,7 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer
-  class="footer sm:footer-horizontal bg-base text-base-content container mx-auto px-4 py-10 xl:max-w-6xl"
+  class="footer md:footer-horizontal bg-base text-base-content container mx-auto px-4 py-10 md:grid-cols-[2fr_1fr_1fr_1fr] md:gap-6 xl:max-w-6xl"
 >
   <aside>
     <p class="text-lg font-semibold">Wurst & Ale</p>
@@ -13,15 +13,21 @@ const currentYear = new Date().getFullYear();
       Your new favorite joint in Lakeview.
     </p>
     <p class="mt-4 text-sm opacity-70">
-      © {currentYear} Wurst & Ale. All rights reserved.
+      © {currentYear} Wurst & Ale. All rights reserved.<br />
+      <span class="mt-4 text-xs opacity-70">
+        Wurst & Ale is a fictional establishment created solely to showcase web
+        development skills. It is not a real business and is not affiliated with
+        any actual restaurant, bar, or establishment.
+      </span>
     </p>
   </aside>
   <nav>
     <h6 class="footer-title">Quick Links</h6>
     <a class="link link-hover" href="/#home">Home</a>
-    <a class="link link-hover" href="/#featured-links">Menu</a>
-    <a class="link link-hover" href="/#featured-events">Events</a>
-    <a class="link link-hover" href="/#gallery">Gallery</a>
+    <a class="link link-hover" href="/food-menu">Food</a>
+    <a class="link link-hover" href="/beer-menu">Beer</a>
+    <a class="link link-hover" href="/events">Events</a>
+    <a class="link link-hover" href="/contact">Contact</a>
   </nav>
   <nav>
     <h6 class="footer-title">Visit Us</h6>
