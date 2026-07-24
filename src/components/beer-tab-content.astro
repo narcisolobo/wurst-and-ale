@@ -22,7 +22,10 @@ interface Props {
 const { tabId, items } = Astro.props;
 ---
 
-<div class="tab-panel mt-4 hidden" data-tab-panel={tabId}>
+<div
+  class="tab-panel mt-4 hidden max-w-[calc(100vw-32px)]"
+  data-tab-panel={tabId}
+>
   <div class="bg-base-100 rounded-lg p-6 shadow">
     <BeerFilterPanel tabId={tabId} />
     <table class="table">

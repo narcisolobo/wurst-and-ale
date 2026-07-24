@@ -10,23 +10,27 @@ const craftId = `origin-craft-${tabId}`;
 const importId = `origin-import-${tabId}`;
 ---
 
-<div class="border-b-base-300 flex gap-4 border-b pb-2 text-sm">
-  <span class="font-semibold">Filter by origin:</span>
-  <label class="flex cursor-pointer items-center gap-2">
-    <input type="checkbox" id={domesticId} class="checkbox checkbox-xs" />
-    Domestic
-  </label>
-  <label class="flex cursor-pointer items-center gap-2">
-    <input type="checkbox" id={craftId} class="checkbox checkbox-xs" />
-    Craft & Local
-  </label>
-  <label class="flex cursor-pointer items-center gap-2">
-    <input type="checkbox" id={importId} class="checkbox checkbox-xs" />
-    Import
-  </label>
+<div class="border-b-base-300 overflow-x-auto border-b pb-2 text-sm">
+  <p class="mb-2 font-semibold whitespace-nowrap">Filter by origin:</p>
+  <div class="flex flex-nowrap gap-4">
+    <label class="flex cursor-pointer items-center gap-2">
+      <input type="checkbox" id={domesticId} class="checkbox checkbox-xs" />
+      Domestic
+    </label>
+    <label class="flex cursor-pointer items-center gap-2 whitespace-nowrap">
+      <input type="checkbox" id={craftId} class="checkbox checkbox-xs" />
+      Craft & Local
+    </label>
+    <label class="flex cursor-pointer items-center gap-2 whitespace-nowrap">
+      <input type="checkbox" id={importId} class="checkbox checkbox-xs" />
+      Import
+    </label>
+  </div>
 </div>
 
-<style is:global set:html={`
+<style
+  is:global
+  set:html={`
   [data-tab-panel="${tabId}"] [data-beer-item] {
     display: none;
   }
@@ -46,4 +50,5 @@ const importId = `origin-import-${tabId}`;
     [data-tab-panel="${tabId}"] [data-beer-item][data-origin="import"] {
     display: table-row;
   }
-`}></style>
+`}
+></style>
